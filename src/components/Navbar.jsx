@@ -1,19 +1,22 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
-    const count = useSelector((state) => state.counter.value)
+  const count = useSelector((state) => state.counter.value);
+
   return (
-    <div style={{width: '100vw', position: 'absolute', top: 0, left: 0, display: 'flex', justifyContent: 'space-between', flexDirection: 'row', backgroundColor: 'white', color: 'black'}}>
-      {/* This is Navbar {count} */}
-      <li style={{display: 'flex', flexDirection: 'row', listStyle: 'none'}}>
-        <ul>Home</ul>
-        <ul>About</ul>
-        <ul>Contact us</ul>
-      </li>
-        <button style={{margin: '10px'}}>Cart <span style={{position: 'absolute', top: 5, right: 5, backgroundColor: 'red', color: 'white', borderRadius: '50%', width: 20, height: 20, padding: "2px"}}>{count}</span></button>
-    </div>
-  )
+    <nav className="navbar">
+      <ul className="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+      <button className="cart-button">
+        Cart 
+        <span className="cart-count">{count}</span>
+      </button>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
